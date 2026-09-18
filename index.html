@@ -1,200 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Tejaswini Dinkar | Resume</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        body {
-            background: #f4f6fb;
-            color: #333;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            background: white;
-            display: flex;
-            box-shadow: 0 0 20px rgba(0,0,0,0.08);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        /* LEFT SIDE */
-        .left {
-            width: 35%;
-            background: #0d1b2a;
-            color: white;
-            padding: 40px 25px;
-        }
-
-        .left h1 {
-            font-size: 26px;
-            margin-bottom: 10px;
-        }
-
-        .left h3 {
-            font-size: 14px;
-            letter-spacing: 2px;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            color: #a8dadc;
-        }
-
-        .left p {
-            font-size: 14px;
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        /* RIGHT SIDE */
-        .right {
-            width: 65%;
-            padding: 40px;
-        }
-
-        .section {
-            margin-bottom: 35px;
-        }
-
-        .section h2 {
-            font-size: 20px;
-            color: #1d3557;
-            margin-bottom: 12px;
-            border-bottom: 2px solid #e5e5e5;
-            padding-bottom: 5px;
-        }
-
-        .section p {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        .section ul {
-            padding-left: 20px;
-        }
-
-        .section ul li {
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #1d3557;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin: 5px 5px 0 0;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .left, .right {
-                width: 100%;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tejaswini Dinkar | Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF;
+    --ink:#1B2430;
+    --ink-soft:#48505C;
+    --accent:#6E5B3E;
+    --rule:#D9D3C2;
+    --card:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.55;
+  }
+  h1,h2,.role{font-family:'Source Serif 4',Georgia,serif;}
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:64px 28px 96px;
+  }
+  header{
+    border-bottom:1px solid var(--rule);
+    padding-bottom:28px;
+    margin-bottom:36px;
+  }
+  h1{
+    font-size:2.5rem;
+    font-weight:600;
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+  .tagline{
+    color:var(--accent);
+    font-size:1.05rem;
+    margin:0 0 18px;
+    font-weight:500;
+  }
+  .contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 18px;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+  }
+  section{margin-bottom:38px;}
+  h2{
+    font-size:1.05rem;
+    font-weight:600;
+    color:var(--accent);
+    margin:0 0 16px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--rule);
+  }
+  p.lead{
+    color:var(--ink-soft);
+    font-size:0.98rem;
+  }
+  .entry{margin-bottom:22px;}
+  .entry:last-child{margin-bottom:0;}
+  .entry-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .role{
+    font-size:1.08rem;
+    font-weight:600;
+    margin:0;
+  }
+  .org{
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    font-style:italic;
+  }
+  .dates{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  ul{
+    margin:10px 0 0;
+    padding-left:20px;
+  }
+  li{margin-bottom:6px;font-size:0.95rem;}
+  .skills-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px 32px;
+  }
+  .skill-cat h3{
+    font-size:0.85rem;
+    color:var(--accent);
+    margin:0 0 6px;
+    font-weight:600;
+  }
+  .skill-cat p{
+    margin:0;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+  }
+  footer{
+    border-top:1px solid var(--rule);
+    padding-top:20px;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+  @media (max-width:600px){
+    .skills-grid{grid-template-columns:1fr;}
+    h1{font-size:2rem;}
+  }
+</style>
 </head>
-
 <body>
+<div class="wrap">
 
-<div class="container">
+  <header>
+    <h1>Tejaswini Dinkar</h1>
+    <p class="tagline">Finance &amp; Strategy Student · Equity Research · Business Analytics · Consulting</p>
+    <div class="contact">
+      <span>Mumbai, India</span>
+      <span>+91 89283 59306</span>
+      <span>dinkartejaswini@gmail.com</span>
+      <span>NISM Research Analyst Certified</span>
+    </div>
+  </header>
 
-    <!-- LEFT SIDE -->
-    <div class="left">
-        <h1>Tejaswini Dinkar</h1>
-        <p>BBA – Digital Business & Entrepreneurship</p>
+  <section>
+    <p class="lead">Dual-degree finance and business student combining a BBA in Digital Business &amp; Entrepreneurship with a B.Com in Accounting &amp; Finance — building interdisciplinary fluency across financial analysis, investment research, market strategy, and consumer behaviour. Cleared the NISM Series XV Research Analyst Certification, demonstrating foundational competency in equity research and capital markets. Brings structured analytical thinking, professional communication, and a track record of strategic execution across leadership, outreach, and academic competition contexts. Actively developing expertise at the intersection of finance, digital business, and strategic analysis — oriented toward roles in equity research, investment analysis, consulting, and strategy.</p>
+  </section>
 
-        <h3>CONTACT</h3>
-        <p>📧 dinkartejaswini@gmail.com</p>
-        <p>📍 Mumbai, India</p>
-        <p>📞 +91 89283 59306</p>
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <p class="role">Bachelor of Business Administration — Digital Business &amp; Entrepreneurship</p>
+        <span class="dates">2023 – Present</span>
+      </div>
+      <p class="org">Amity Business School, Amity University Mumbai</p>
+      <p style="font-size:0.9rem;color:var(--ink-soft);margin:6px 0 0;"><strong>Relevant coursework:</strong> Business Strategy · Financial Management · Digital Business · Marketing Management · Consumer Behaviour · Business Analytics · Innovation &amp; Entrepreneurship · Organisational Behaviour</p>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <p class="role">Bachelor of Commerce — Accounting &amp; Finance (Dual Degree)</p>
+        <span class="dates">2023 – Present</span>
+      </div>
+      <p class="org">Amity University Mumbai</p>
+      <p style="font-size:0.9rem;color:var(--ink-soft);margin:6px 0 0;"><strong>Relevant coursework:</strong> Financial Accounting · Corporate Finance · Managerial Economics · Cost Accounting · Business Statistics · Direct &amp; Indirect Taxation · Business Law &amp; Regulation</p>
+    </div>
+  </section>
 
-        <h3>SKILLS</h3>
-        <p>Strategic Communication</p>
-        <p>Brand Outreach</p>
-        <p>Campaign Marketing</p>
-        <p>Community Engagement</p>
-        <p>Content Writing</p>
-        <p>Public Speaking</p>
-        <p>Basic HTML, Python, SQL</p>
+  <section>
+    <h2>Certification</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <p class="role">NISM Series XV — Research Analyst Certification</p>
+        <span class="dates">SEBI / NISM</span>
+      </div>
+      <ul>
+        <li>Regulatory certification covering equity research methodology, valuation frameworks, financial statement analysis, investment analysis, and SEBI research analyst regulations.</li>
+        <li>Developed foundational fluency in fundamental analysis, report structuring, and capital markets mechanics through structured certification preparation.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <p class="role">Investment Banking Intern</p>
+        <span class="dates">2025</span>
+      </div>
+      <p class="org">Virtuous Capital</p>
+      <ul>
+        <li>Supported deal and research workflows on live mandates, contributing to financial analysis and market/industry research.</li>
+        <li>Assisted with valuation and financial modelling exercises under senior guidance.</li>
+        <li>Prepared supporting materials for client and internal pitch discussions.</li>
+      </ul>
     </div>
 
-    <!-- RIGHT SIDE -->
-    <div class="right">
-
-        <div class="section">
-            <h2>About Me</h2>
-            <p>
-                I’m a marketing enthusiast and expressive storyteller who thrives on building real
-                connections between people and ideas. Whether it’s promoting large-scale
-                college events, collaborating with student communities across campuses, or
-                launching a women-only community from scratch (The Pinklist), I’ve always
-                taken initiative and led with intention.
-            </p>
-            <p>
-                Currently studying Digital Business & Entrepreneurship, I’m driven by both
-                creativity and strategy — and I’m always ready to bring energy, ideas, and execution
-                to any team I join.
-            </p>
-        </div>
-
-        <div class="section">
-            <h2>Education</h2>
-            <ul>
-                <li><strong>IIM Bangalore</strong> – BBA Digital Business & Entrepreneurship (2024 – Present)</li>
-                <li><strong>Mumbai University</strong> – B.Com Accounting & Finance (2024 – Present)</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Experience</h2>
-
-            <p><strong>Founder & Marketing Lead – The Pinklist</strong> (2025 – Present | Mumbai)</p>
-            <ul>
-                <li>Conceptualizing a women-centric journaling and community platform</li>
-                <li>Leading marketing strategy and digital outreach</li>
-                <li>Audience research through Google Forms</li>
-                <li>Initiated café collaborations and partnerships</li>
-                <li>Designing Instagram and on-ground rollout structure</li>
-            </ul>
-
-            <br>
-
-            <p><strong>Event Marketer – Amity University (Freelance)</strong> (2024)</p>
-            <ul>
-                <li>Marketed student-led events to brands and sponsors</li>
-                <li>Designed pitch decks and email outreach strategies</li>
-                <li>Managed brand communication and negotiations</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Leadership & Initiatives</h2>
-            <ul>
-                <li>Wing Lead for student event marketing</li>
-                <li>Managed complete marketing cycles from outreach to promotions</li>
-                <li>Designed campaigns using Canva</li>
-                <li>Built strong inter-college collaborations</li>
-            </ul>
-        </div>
-
+    <div class="entry">
+      <div class="entry-head">
+        <p class="role">Founder &amp; Marketing Lead</p>
+        <span class="dates">2025 – Present</span>
+      </div>
+      <p class="org">The Pinklist, Mumbai</p>
+      <ul>
+        <li>Conceptualized a women-centric journaling and community platform, leading marketing strategy and digital outreach.</li>
+        <li>Ran audience research through structured surveys and initiated café collaborations and partnerships.</li>
+        <li>Designed the Instagram presence and on-ground rollout structure.</li>
+      </ul>
     </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <p class="role">Member — Placement Committee, LD Lab</p>
+        <span class="dates">2023 – Present</span>
+      </div>
+      <p class="org">Amity University Mumbai</p>
+      <ul>
+        <li>Contributed to placement drive coordination for a cohort of students, managing stakeholder communication with 6+ participating companies including documentation, scheduling, and post-event reporting.</li>
+        <li>Produced a structured internship drive event report documenting company profiles, participation metrics, and process outcomes.</li>
+        <li>Engaged in cross-functional coordination between students, faculty, and external corporate contacts.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <p class="role">PR Head</p>
+        <span class="dates">2023 – Present</span>
+      </div>
+      <p class="org">College Club, Amity University Mumbai</p>
+      <ul>
+        <li>Directed outreach strategy and stakeholder communication, designing audience engagement frameworks across student communities.</li>
+        <li>Managed end-to-end communication planning including messaging consistency, channel selection, and promotional execution.</li>
+        <li>Represented the club in institutional engagements and external-facing interactions.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <p class="role">Marketing Team Member</p>
+        <span class="dates">2024</span>
+      </div>
+      <p class="org">College Event, Amity University Mumbai</p>
+      <ul>
+        <li>Contributed to a large-scale outreach campaign reaching approximately 8,000–9,000 students.</li>
+        <li>Collaborated across functional teams to align messaging and optimize promotional timing.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects &amp; Research</h2>
+
+    <div class="entry">
+      <p class="role">Zomato / Eternal Ltd. — Equity Research Report</p>
+      <p class="org">Independent Finance Project</p>
+      <ul>
+        <li>Conducted an equity research study on Zomato (Eternal Ltd.) across its four business verticals — food delivery, Blinkit quick commerce, Hyperpure B2B supply, and District events.</li>
+        <li>Built a financial model projecting revenue, EBITDA, and free cash flow through FY27E, with segment-level assumptions and sensitivity analysis.</li>
+        <li>Performed SOTP and DCF valuation to derive a target price, contextualized against sector multiples and analyst consensus.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <p class="role">Storytelling in Advertising — Consumer Behaviour Research</p>
+      <p class="org">Academic Research Project</p>
+      <ul>
+        <li>Investigated the role of emotional narrative and psychological triggers in Indian advertising on consumer recall and purchase intent.</li>
+        <li>Synthesized consumer psychology theory with Indian brand case studies including Fevicol, Asian Paints, and Tanishq.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <p class="role">Café Eunoia — Brand Identity &amp; Digital Experience Design</p>
+      <p class="org">Independent Digital Project</p>
+      <ul>
+        <li>Conceptualized a full brand identity and digital presence for a themed café concept, from brand tone to customer experience strategy.</li>
+        <li>Designed and developed the website integrating UI/UX principles and consumer-first navigation architecture.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills &amp; Competencies</h2>
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <h3>Finance &amp; Research</h3>
+        <p>Equity Research · Financial Statement Analysis · Investment Research · Valuation Basics (DCF, Comparables) · Market Research · Competitive Intelligence</p>
+      </div>
+      <div class="skill-cat">
+        <h3>Strategy &amp; Business</h3>
+        <p>Business Strategy · Brand &amp; Growth Strategy · Business Development · Digital Marketing · Go-to-Market Thinking</p>
+      </div>
+      <div class="skill-cat">
+        <h3>Technical</h3>
+        <p>Python · SQL · HTML · Canva · Website Development · Excel · PowerPoint</p>
+      </div>
+      <div class="skill-cat">
+        <h3>Communication &amp; Leadership</h3>
+        <p>Structured Storytelling · Analytical Presentation · Public Speaking · Team Leadership · Research Synthesis</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Competitions &amp; Academic Engagement</h2>
+    <ul>
+      <li>National finalist at IIM Indore and NMIMS case competitions — presented business strategy solutions involving market analysis, financial reasoning, and go-to-market recommendations.</li>
+      <li>Engaged in sustainable development and nation-building themed case competitions, applying policy analysis and innovation frameworks.</li>
+      <li>Participated in consulting and market research case formats requiring competitor benchmarking and data-backed recommendations.</li>
+      <li>Participated in Model United Nations — built research depth and structured argumentation through multi-stakeholder policy debate.</li>
+      <li>Active in entrepreneurship and digital business competitions involving venture ideation and business model development.</li>
+    </ul>
+  </section>
+
+  <footer>
+    Open to internship opportunities in Equity Research · Investment Analysis · Consulting · Strategy · Business &amp; Market Research
+  </footer>
+
 </div>
-
 </body>
 </html>
